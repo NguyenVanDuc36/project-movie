@@ -6,6 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './Redux/configSrote';
 import "antd/dist/antd.css";
+
+
+// import 'primereact/resources/themes/saga-blue/theme.css';
+// import 'primereact/resources/primereact.min.css';
+// import 'primeicons/primeicons.css';
+
+
+ 
 ReactDOM.render(
   <Provider store={store} >
     <App />

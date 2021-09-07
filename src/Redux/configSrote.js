@@ -1,7 +1,12 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
+import { CarouselReducer } from './reducers/CarouselReducer';
+import { danhSachPhimReducer } from './reducers/HomeReducer';
+import { HeThongRapReducer } from './reducers/QuanLyRapReducer';
 const rootReducer = combineReducers({
-    // state ứng dụng
+    CarouselReducer,
+    danhSachPhimReducer,
+    HeThongRapReducer
 })
 
 export const store = createStore(rootReducer,applyMiddleware(thunk));

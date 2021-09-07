@@ -1,0 +1,18 @@
+.footer{
+    background-color: #222 !important;
+    color: white !important;
+    .i-contact{
+        color: white;
+        font-size: 30px;
+        &:hover{
+            color: #e41a1a;
+        }
+    }
+    .text-contact{
+        color: white;
+        font-size: 14px;
+        &:hover{
+            color: #e41a1a;
+        }
+    }
+}

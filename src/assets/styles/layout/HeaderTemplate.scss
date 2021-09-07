@@ -1,2 +1,18 @@
 @import '../variables/variable.scss';
+@import "../mixin";
+
+
+header{
+    a{
+        color: white !important;
+        font-weight: 500;
+        &:hover{
+            color: $red-1 !important;
+        }
+    }
+    .nav-item{
+        border-left: 2px solid white;
+    }
+    @include button;
+}
 

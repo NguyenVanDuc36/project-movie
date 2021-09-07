@@ -1,32 +1,22 @@
 import React from 'react'
-import { Carousel } from 'antd';
-
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import '../../../../assets/styles/layout/CarouselTeamplate.scss'
 
 export default function HomeCourasel() {
+  return (
+    <div >
+      <OwlCarousel className='owl-theme' autoplay={false  } loop items={1}>
+      <div style={{height:'700px'}} className="item  bg-banner-2 bg-contain object-cover bg-center">
+      </div>
+      <div style={{height:'700px'}} className="item bg-banner-11 bg-contain object-cover bg-center">
+      </div>
+      <div style={{height:'700px'}} className="item bg-banner-4 bg-cover object-cover bg-center">
+      </div>
 
-    const contentStyle = {
-        height: '700px',
-        color: 'white',
-        lineHeight: '160px',
-        textAlign: 'center',
-    };
-
-
-
-    return (
-        <div>
-            <Carousel effect="fade">
-                <div className="bg-banner-1" >
-                    <h3 style={contentStyle}></h3>
-                </div>
-                <div className="bg-banner-2">
-                    <h3 style={contentStyle}></h3>
-                </div>
-                <div className="bg-banner-3">
-                    <h3 style={contentStyle}></h3>
-                </div>
-            </Carousel>
-            {/* <div className="absolute w-full -inset-0" style={{ height: '700px', background: 'rgb(0 0 0 / 45%)' }} ></div> */}
-        </div>
-    )
+    </OwlCarousel>
+    </div>
+    
+  )
 }

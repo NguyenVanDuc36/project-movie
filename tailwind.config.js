@@ -9,8 +9,11 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
        'banner-1': "url('https://akthemes.com/video/images/slider/banner-1.jpg')",
-       'banner-2': "url('https://akthemes.com/video/images/slider/banner-2.jpg')",
-       'banner-3': "url('https://akthemes.com/video/images/slider/banner-3.png')",
+       'banner-3': "url('https://akthemes.com/video/images/slider/banner-2.jpg')",
+       'banner-2': "url('https://akthemes.com/video/images/slider/banner-3.png')",
+       'banner-4': "url('https://akthemes.com/video/images/tv-shows/100.jpg')",
+       'banner-5': "url('https://akthemes.com/video/images/slider/banner-5.png')",
+       'banner-11': "url('https://akthemes.com/video/images/tv-shows/pirates.jpg')",
       }),
     },
 
@@ -77,7 +80,7 @@ module.exports = {
       none: 'none',
       spin: 'spin 1s linear infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
-      pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1)',
       bounce: 'bounce 1s infinite',
     },
     backdropBlur: (theme) => theme('blur'),
