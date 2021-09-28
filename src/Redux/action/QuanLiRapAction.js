@@ -1,6 +1,7 @@
 import axios from "axios";
 import { qlRapService } from "../../services/QuanLiRapService";
 import { LAYDANHSACHRAP } from "../../utils/settings";
+import { SETCHITIETPHIM } from './../../utils/settings';
 export const layThongTinLichChieuHeThongRapAction = () => {
 
     return async (dispatch,getState) => {
@@ -18,4 +19,27 @@ export const layThongTinLichChieuHeThongRapAction = () => {
     }
 
 }
+
+
+export const latThongTinChiTietPhimAction =(maPhim)=>{
+
+
+    return async (dispatch,getstate) =>{
+
+        try {
+            const result = await qlRapService.layThongTinLichChieuPhim(maPhim);
+            await dispatch({
+                type:SETCHITIETPHIM,
+                payload:result.data.content
+            })
+        } catch (error) {
+            console.log({error});
+        }
+
+    }
+
+}
+
+
+
 

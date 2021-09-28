@@ -1,89 +1,112 @@
 import React from 'react'
 import '../../../.././assets/styles/layout/Footer.scss'
-import Contact from './../../../../pages/Contact/Contact';
-import { useSelector } from 'react-redux';
-import  _  from 'lodash';
-export default function Footer(props) {
-
-    const {heThongRap} = useSelector(state => state.HeThongRapReducer)
-    
-    const arrHeThongRap = _.map(heThongRap,(rap) =>
-        _.pick(rap,['maHeThongRap','tenHeThongRap','logo'])
-    );
-
-    console.log(arrHeThongRap);
+import { useTranslation } from 'react-i18next';
+import { Select } from 'antd';
+export default function Footer() {
+    const { Option } = Select;
+    function handleChange(value) {
+        i18n.changeLanguage(value)
+    }
+    const { t, i18n } = useTranslation();
 
     return (
-        <div className="footer" >
-            <hr />
-            <footer className="py-6 text-coolGray-900">
-                <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-                    <div className="grid grid-cols-12">
-                        <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-                            <a href="#" className="flex justify-center space-x-3 md:justify-start">
-
-                                <span className="self-center text-2xl font-semibold">
-                                    <img src="./img/footer-logo.png" />
-                                </span>
-                            </a>
-                        </div>
-                        <div className="col-span-6 text-center md:text-left md:col-span-3">
-                            <p className="pb-1 text-lg font-medium">Đối tác</p>
-                            <div className="grid grid-cols-3">
-                                {arrHeThongRap.map((htr,index)=>{
-                                    return <div className="flex justify-center" key={index} >
-                                        <a><img className="m-2" src={htr.logo} width={50} height={50} /></a>
-                                            </div>
-                                })}
-                            </div>
-                        </div>
-                        <div className="col-span-6 text-center md:text-left md:col-span-3">
-                            <p className="pb-1 text-lg font-medium">Mobile App</p>
-                            <div class="wrapper">
-                                <div class="icon youtube">
-                                    <div class="tooltip">Apple</div>
-                                    <span><i class="fab fa-apple"></i></span>
-                                </div>
-                                <div class="icon youtube">
-                                    <div class="tooltip">Androi</div>
-                                    <span><i class="fab fa-android"></i></span>
-                                </div>
-                            </div> 
-                        </div>
+        <div className="footer" style={{ backgroundColor: '#0b1a2a' }}>
+            <footer className="px-4 pt-5 divide-y bg-coolGray-100 text-coolGray-800">
+                <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+                    <div className="lg:w-1/3">
+                        <a href="#" className="flex justify-center space-x-3 lg:justify-start">
+                        <img src="https://themes.themewild.com/vidstream/assets/images/logo.png" style={{ width: '50%' }} />
+                        
+                        </a>
+                        <div class="wrapper m-0 mt-3">
+                                        <div class="icon facebook">
+                                            <div class="tooltip">Facebook</div>
+                                            <span><i class="fab  fa-facebook-f"></i></span>
+                                        </div>
+                                        <div class="icon twitter">
+                                            <div class="tooltip">Twitter</div>
+                                            <span><i class="fab fa-twitter"></i></span>
+                                        </div><br/>
+                                        <div class="icon instagram">
+                                            <div class="tooltip">Instagram</div>
+                                            <span><i class="fab fa-instagram"></i></span>
+                                        </div>
+                                        <div class="icon youtube">
+                                            <div class="tooltip">Youtube</div>
+                                            <span><i class="fab fa-youtube"></i></span>
+                                        </div>
+                                    </div>
                     </div>
-                    <div className="grid justify-center pt-6  lg:justify-between">
-                        <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
-                            <span>©2021 All rights reserved</span>
-                            <a className="text-contact" href="#">
-                                <span>Privacy policy</span>
-                            </a>
-                            <a className="text-contact" href="#">
-                                <span>Terms of service</span>
-                            </a>
+                    <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+                        <div className="space-y-3">
+                            <h3 className="tracking-wide uppercase  text-contact text-coolGray-900">Product</h3>
+                            <ul className="space-y-1">
+                                <li>
+                                    <a className="text-big" href="#">Features</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">Integrations</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">Pricing</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">FAQ</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
-                            <div class="wrapper">
-                                <div class="icon facebook">
-                                    <div class="tooltip">Facebook</div>
-                                    <span><i class="fab  fa-facebook-f"></i></span>
-                                </div>
-                                <div class="icon twitter">
-                                    <div class="tooltip">Twitter</div>
-                                    <span><i class="fab fa-twitter"></i></span>
-                                </div>
-                                <div class="icon instagram">
-                                    <div class="tooltip">Instagram</div>
-                                    <span><i class="fab fa-instagram"></i></span>
-                                </div>
-                                <div class="icon youtube">
-                                    <div class="tooltip">Youtube</div>
-                                    <span><i class="fab fa-youtube"></i></span>
-                                </div>
-                            </div>
+                        <div className="space-y-3">
+                            <h3 className="tracking-wide text-contact uppercase text-coolGray-900">Company</h3>
+                            <ul className="space-y-1">
+                                <li>
+                                    <a className="text-big" href="#">Privacy</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">Terms of Service</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="uppercase text-contact text-coolGray-900">Developers</h3>
+                            <ul className="space-y-1">
+                                <li>
+                                    <a className="text-big" href="#">Public API</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">Documentation</a>
+                                </li>
+                                <li>
+                                    <a className="text-big" href="#">Guides</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="space-y-3">
+                        <p className="pb-1 text-contact text-lg font-medium">Important Link</p>
+                                <ul>
+                                    <li>
+                                        <a href="#" className="text-big">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="text-big">Movies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="text-big">Tv Shows</a>
+                                    </li>
+                                </ul>
+                            
                         </div>
                     </div>
                 </div>
+                <div className="py-6 text-sm text-center text-coolGray-600">
+                    <span className="mr-5" >© 1968 Company Co. All rights reserved.</span>
+                <Select  defaultValue="en" style={{ width: 150 }} onChange={handleChange}>
+                                            <Option value="vi">VietNam <img style={{ width: '20%', display: 'inline' }} src="http://4.bp.blogspot.com/-gg6pHTutcPo/UXUBQhYn8wI/AAAAAAAABCA/sX11UKGEcjY/s1600/hinh-anh-la-co-viet-nam-dep+%25285%2529.jpg" /></Option>
+                                            <Option value="en">English <img style={{ width: '20%', display: 'inline' }} src="https://tse1.mm.bing.net/th?id=OIP.tJhKGdXPZwqt8k1i5o3u0gHaD5&pid=Api&P=0&w=313&h=165" /></Option>
+                                            <Option value="chi">China  <img style={{ width: '20%', display: 'inline' }} src="https://4.bp.blogspot.com/-p7Qn3-rAcUE/Td5uZWtbGNI/AAAAAAAAAhI/8Xlwy-KaRFA/s1600/la_co_trung_quoc.jpg" /></Option>
+                                        </Select>
+                </div>
             </footer>
+
         </div>
     )
 }

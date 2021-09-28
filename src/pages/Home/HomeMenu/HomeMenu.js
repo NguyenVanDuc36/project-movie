@@ -23,13 +23,13 @@ export default class HomeMenu extends React.PureComponent {
         return this.props.heThongRapChieu?.map((heThongRap, index) => {
             let { tabPosition } = this.state;
             return <TabPane className="p-0 m-0"  tab={<img src={heThongRap.logo} className="rounded-full" width="50" />} key={index}>
-                <Tabs className="p-0 m-0"  tabPosition={tabPosition}>
+                <Tabs   className="p-0 m-0"  tabPosition={tabPosition}>
                     {heThongRap.lstCumRap?.map((cumRap, index) => {
-                        return <TabPane className="p-0 m-0"  tab={
+                        return <TabPane key={index} className="p-0 m-0"  tab={
                             <div style={{ width: '300px', display: 'flex' }} >
                                 <img src="https://s3img.vcdn.vn/123phim/2018/09/ddc-dong-da-15379624326697.jpg" style={{width:'50px',height:'50px'}} /> 
                                 <div className="text-left ml-2">
-                                    <p className="w-50 m-0 text-dark" >{cumRap.tenCumRap}</p>
+                                    <p className="w-50 m-0 text-green-600" >{cumRap.tenCumRap}</p>
                                     <p style={{width:'80%',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}} className=" m-0 text-gray-400" >{cumRap.diaChi}</p>
                                     <p  style={{fontSize:'12px',fontWeight:'550'}} className="text-red-500 ">[Chi tiết]</p>
                                 </div>
@@ -43,7 +43,7 @@ export default class HomeMenu extends React.PureComponent {
                                             <img className="object-cover mt-2 ml-2" style={{ height: 60, width: 60 }} src={phim.hinhAnh} alt={phim.tenPhim} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/60/60" }} />
 
                                             <div className="ml-2">
-                                                <h1 className="text-base  font-medium text-green-700 m-0" >{phim.tenPhim}</h1>
+                                                <h1 className="text-base  font-medium text-gray-400 m-0" >{phim.tenPhim}</h1>
                                                 <p style={{width:'60%',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}  className="m-0 text-gray-400">{cumRap.diaChi}</p>
                                                 <div className="grid grid-cols-6 gap-5">
                                                     {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
