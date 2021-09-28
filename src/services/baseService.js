@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_LOGIN } from './../utils/settings';
+import { tokenSyberSoft, USER_LOGIN, ACCESSTOKEN } from './../utils/settings';
 
 export class baseService {
 
@@ -8,7 +8,8 @@ export class baseService {
             url:url,
             method:'GET',
             headers:{
-                'Authorization': `Bearer ${localStorage.getItem(USER_LOGIN)}`
+                'Authorization': `Bearer ${localStorage.getItem(ACCESSTOKEN)}`,
+                // 'TokenCybersoft' : `${tokenSyberSoft}`
             }
         })
     }
@@ -19,7 +20,8 @@ export class baseService {
             data:data,
             method:'POST',
             headers:{
-                'Authorization': `Bearer ${localStorage.getItem(USER_LOGIN)}`
+                'Authorization': `Bearer ${localStorage.getItem(ACCESSTOKEN)}`,
+                // 'TokenCybersoft' : `${tokenSyberSoft}`
             }
         })
     }
@@ -30,7 +32,8 @@ export class baseService {
             data:data,
             method:'PUT',
             headers:{
-                'Authorization': `Bearer ${localStorage.getItem(USER_LOGIN)}`
+                'Authorization': `Bearer ${localStorage.getItem(ACCESSTOKEN)}`,
+                // 'TokenCybersoft' : `${tokenSyberSoft}`
             }
         })
     }
@@ -39,7 +42,8 @@ export class baseService {
             url:url,
             method:'DELETE',
             headers:{
-                'Authorization': `Bearer ${localStorage.getItem(USER_LOGIN)}`
+                'Authorization': `Bearer ${localStorage.getItem(ACCESSTOKEN)}`,
+                // 'TokenCybersoft' : `${tokenSyberSoft}`
             }
         })
     }

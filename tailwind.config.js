@@ -14,6 +14,7 @@ module.exports = {
        'banner-4': "url('https://akthemes.com/video/images/tv-shows/100.jpg')",
        'banner-5': "url('https://akthemes.com/video/images/slider/banner-5.png')",
        'banner-11': "url('https://akthemes.com/video/images/tv-shows/pirates.jpg')",
+       'banner-12': "url('https://wallpapercave.com/wp/wp5790870.jpg')",
       }),
     },
 
@@ -78,7 +79,7 @@ module.exports = {
     },
     animation: {
       none: 'none',
-      spin: 'spin 1s linear infinite',
+      spin: 'spin 1s ease 1 ',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1)',
       bounce: 'bounce 1s infinite',
@@ -189,7 +190,7 @@ module.exports = {
       200: '2',
     },
     container: {
-      padding:'10rem'
+      padding:'5rem'
     },
     content: {
       none: 'none',
@@ -466,7 +467,7 @@ module.exports = {
     keyframes: {
       spin: {
         to: {
-          transform: 'rotate(360deg)',
+          transform: 'rotatex(360deg)',
         },
       },
       ping: {

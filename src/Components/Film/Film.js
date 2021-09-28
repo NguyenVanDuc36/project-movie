@@ -1,29 +1,39 @@
-import React from 'react'
-import { Card } from 'antd';
-import OwlCarousel from 'react-owl-carousel';
+import React, { useState } from 'react';
+import { Modal, Button } from 'antd';
+import '../../assets/styles/layout/Home.scss'
+import { NavLink } from 'react-router-dom';
 export default function Film(props) {
-    const { Meta } = Card;
-    return (
-        <div  class='item blog-home '>
-            <Card
-                className=""
-                hoverable
-                style={{ width: 230 }}
-                cover={<img style={{ height: '300px' }} className="object-cover  img-fuild " alt="example" src="./img/banner-9.jpg" />}
-            >
-                <Meta title={<p className="p-0" style={{ fontWeight: '600', color: '#8f8f8f' }} >Deadpool <span className="text-danger" >90min</span> </p>}  />
-            </Card>
-            <div className="overlay" >
-                <div className="ml-2 mt-3" >
-                    <span style={{ width: '90px', color: 'black' }} className="bg-warning  px-3 py-1  rounded-md">Premium</span>
-                </div>
+    const [visible, setVisible] = useState(false);
+    const phim = props.phim;
+  return (
+      <div className="item mt-10">
+          <div className="flex justify-center relative" >
+             <img className="object-cover slider-img" style={{borderRadius:'12px',width:'310px',height:'180px',border:'3px solid white'}} src={phim.hinhAnh} />
+          </div>
+          <div style={{border:'3px solid white'}} className="overlay px-3  flex justify-between absolute" >
+              <div className="mt-4 flex flex-col ">
+                  <p className="text-white text-lg" >{phim.tenPhim}</p>
+                  <p className="text-white text-lg" >Đánh giá : <span className="bg-red-600 p-1 rounded-sm text-xs" >{phim.danhGia}/10</span> </p>
+                  
+              </div>
+            <div className="mt-4" >
+                <i  onClick={() => setVisible(true)} class="fas icon fa-play"></i><br />
+                <NavLink to={`/detail/${phim.maPhim}`}><i class="fas icon fa-plus "></i><br /></NavLink>
+                <i class="fas icon fa-heart"></i>
+                
             </div>
-            <div className="overlay2  text-light text-center text-2xl" style={{ backgroundColor: '#ff0000' }}>
-                <i class="fas fa-play"></i><br />
-                <i class="fas fa-plus "></i><br />
-                <i class="fas fa-heart"></i><br />
-            </div>
-        </div>
-    )
-}
+          </div>
 
+      <Modal
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        footer={null}
+      >
+
+      </Modal>
+      </div>   
+  )
+}
